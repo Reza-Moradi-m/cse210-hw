@@ -2,23 +2,25 @@ using System;
 
 class Entry
 {
-    public string entryDate;
-    public string prompt;
-    public string response;
+    public string EntryDate { get; set; }
+    public string Prompt { get; set; }
+    public string Response { get; set; }
 
-    public Entry(string date, string prompt, string response)
-    {
-        this.entryDate = date;
-        this.prompt = prompt;
-        this.response = response;
-    }
-
+    // Constructor for creating an entry from user input
     public Entry(string prompt)
     {
-        this.entryDate = DateTime.Now.ToShortDateString();
-        this.prompt = prompt;
-        Console.WriteLine($"Prompt: {prompt}");
+        EntryDate = DateTime.Now.ToShortDateString();
+        Prompt = prompt;
+        Console.WriteLine($"Prompt: {Prompt}");
         Console.Write("Your response: ");
-        this.response = Console.ReadLine();
+        Response = Console.ReadLine();
+    }
+
+    // Constructor for creating an entry from loaded data
+    public Entry(string date, string prompt, string response)
+    {
+        EntryDate = date;
+        Prompt = prompt;
+        Response = response;
     }
 }

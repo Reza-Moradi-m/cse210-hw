@@ -23,25 +23,25 @@ class Menu
                 case "1":
                     string randomPrompt = promptGenerator.GetRandomPrompt();
                     Entry newEntry = new Entry(randomPrompt);
-                    Program.workingJournal.AddEntry(newEntry);
+                    Program._workingJournal.AddEntry(newEntry);
                     break;
                 case "2":
-                    Program.workingJournal.DisplayEntries();
+                    Program._workingJournal.DisplayEntries();
                     break;
                 case "3":
                     Console.Write("Enter the filename to save to: ");
                     string saveFilename = Console.ReadLine();
-                    Program.workingJournal.SaveToFile(saveFilename);
+                    Program._workingJournal.SaveToFile(saveFilename);
                     break;
                 case "4":
                     Console.Write("Enter the filename to load from: ");
                     string loadFilename = Console.ReadLine();
-                    Program.workingJournal.LoadFromFile(loadFilename);
+                    Program._workingJournal.LoadFromFile(loadFilename);
                     break;
                 case "5":
                     Console.Write("Enter the date (MM/DD/YYYY) to search: ");
                     string date = Console.ReadLine();
-                    Program.workingJournal.SearchByDate(date);
+                    Program._workingJournal.SearchByDate(date);
                     break;
                 case "6":
                     keepRunning = false;
