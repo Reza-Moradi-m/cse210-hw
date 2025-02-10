@@ -9,7 +9,7 @@ class Entry
     // Constructor for creating an entry from user input
     public Entry(string prompt)
     {
-        EntryDate = DateTime.Now.ToShortDateString();
+        EntryDate = DateTime.Now.ToString("MM/dd/yyyy");
         Prompt = prompt;
         Console.WriteLine($"Prompt: {Prompt}");
         Console.Write("Your response: ");
