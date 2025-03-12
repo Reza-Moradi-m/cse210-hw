@@ -1,0 +1,2 @@
+0
+SimpleGoal|qqq|qqqqq|20|False
