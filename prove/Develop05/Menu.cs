@@ -12,10 +12,11 @@ class Menu
         Console.WriteLine($"Total Points: {_totalPoints}");  // Display points at every menu prompt
         Console.WriteLine("1. Create New Goal");
         Console.WriteLine("2. Record Event");
-        Console.WriteLine("3. Display Goals");
-        Console.WriteLine("4. Save Goals");
-        Console.WriteLine("5. Load Goals");
-        Console.WriteLine("6. Exit");
+        Console.WriteLine("3. Report Negative Behavior"); // New feature added
+        Console.WriteLine("4. Display Goals");
+        Console.WriteLine("5. Save Goals");
+        Console.WriteLine("6. Load Goals");
+        Console.WriteLine("7. Exit");
     }
 
     public void CreateGoal()
@@ -52,6 +53,22 @@ class Menu
         int earnedPoints = _goalList[index].RecordEvent();
         _totalPoints += earnedPoints;  // Update total points
         Console.WriteLine($"You earned {earnedPoints} points!");
+        Console.WriteLine($"Total Points: {_totalPoints}");  // Show updated points
+    }
+
+    public void ReportNegativeBehavior()
+    {
+        Console.Write("\nDescribe the negative behavior (e.g., lying, procrastination, etc.): ");
+        string behavior = Console.ReadLine();
+        
+        Console.Write("How many points should be deducted for this? ");
+        int penalty = int.Parse(Console.ReadLine());
+
+        // Ensure total points do not go below zero
+        _totalPoints = Math.Max(0, _totalPoints - penalty);
+
+        Console.WriteLine($"You reported: {behavior}");
+        Console.WriteLine($"You lost {penalty} points.");
         Console.WriteLine($"Total Points: {_totalPoints}");  // Show updated points
     }
 

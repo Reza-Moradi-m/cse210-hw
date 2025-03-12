@@ -20,15 +20,18 @@ class Program
                     menu.RecordGoalEvent();
                     break;
                 case "3":
-                    menu.DisplayGoals();
+                    menu.ReportNegativeBehavior();  // New feature to deduct points
                     break;
                 case "4":
-                    menu.Save();
+                    menu.DisplayGoals();
                     break;
                 case "5":
-                    menu.Load();
+                    menu.Save();
                     break;
                 case "6":
+                    menu.Load();
+                    break;
+                case "7":
                     Console.WriteLine("Exiting...");
                     return;
                 default:
