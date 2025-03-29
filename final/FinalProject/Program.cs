@@ -1,9 +1,13 @@
 using System;
 
-class Program
+namespace LibraryManagement
 {
-    static void Main(string[] args)
+    public class Program
     {
-        Console.WriteLine("Hello FinalProject World!");
+        public static void Main(string[] args)
+        {
+            UserInterface ui = new UserInterface();
+            ui.Run();
+        }
     }
 }
